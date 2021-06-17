@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE > RENAME '.o' '.o' $CFILE
+gcc -S $CFILE > rename '.o' '.o' $CFILE
