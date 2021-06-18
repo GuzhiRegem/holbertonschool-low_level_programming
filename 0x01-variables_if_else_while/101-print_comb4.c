@@ -15,7 +15,7 @@ int main(void)
 		{
 			for (i__ = i_+1; i__ <= 9; i__++)
 			{
-				if ((i != i_)&&(i != i__)&&(i__ != i_))
+				if ((i != i_) && (i != i__) && (i__ != i_))
 				{
 					putchar(i + '0');
 					putchar(i_ + '0');
