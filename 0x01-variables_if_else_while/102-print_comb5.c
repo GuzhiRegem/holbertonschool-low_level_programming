@@ -13,11 +13,11 @@ int main(void)
 	{
 		for (i_ = i + 1; i_ <= 99; i_++)
 		{
-			putchar((i / 10)+'0');
-			putchar((i % 10)+'0');
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
 			putchar(' ');
-			putchar((i_ / 10)+'0');
-			putchar((i_ % 10)+'0');
+			putchar((i_ / 10) + '0');
+			putchar((i_ % 10) + '0');
 			if (i < 98)
 			{
 				putchar(',');
