@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char i,i_;
+	int i,i_;
 
 	for (i = '0'; i <= '9'; i++)
 	{
@@ -15,8 +15,8 @@ int main(void)
 		{
 			if (i != i_)
 			{
-				putchar(i);
-				putchar(i_);
+				putchar(i + '0');
+				putchar(i_ + '0');
 				if (i < '8')
 				{
 					putchar(',');
