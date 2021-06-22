@@ -6,8 +6,15 @@
  *
  *Return: end program
  */
-void putnum(int n)
+void putnum(int r)
 {
+	int n;
+	n = r;
+	if r < 0
+	{
+		n = r - (r * 2);
+		_putchar('-');
+	}
 	if (n > 99)
 	{
 		_putchar((n / 100) + '0');
