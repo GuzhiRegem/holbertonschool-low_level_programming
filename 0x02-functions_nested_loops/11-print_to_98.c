@@ -11,7 +11,7 @@ void putnum(int n)
 	if (n > 99)
 	{
 		_putchar((n / 100) + '0');
-		_putchar((n / 10) + '0');
+		_putchar(((n / 10) % 10) + '0');
 		_putchar((n % 10) + '0');
 	}
 	else if (n > 9)
