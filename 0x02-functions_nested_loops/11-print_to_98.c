@@ -2,13 +2,14 @@
 
 /**
  *putnum - print a message with printf
- *@n: The character to print
+ *@r: The character to print
  *
  *Return: end program
  */
 void putnum(int r)
 {
 	int n;
+
 	n = r;
 	if (r < 0)
 	{
