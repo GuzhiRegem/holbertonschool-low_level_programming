@@ -10,7 +10,7 @@ void putnum(int r)
 {
 	int n;
 	n = r;
-	if r < 0
+	if (r < 0)
 	{
 		n = r - (r * 2);
 		_putchar('-');
