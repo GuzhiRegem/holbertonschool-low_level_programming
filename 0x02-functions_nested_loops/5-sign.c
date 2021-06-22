@@ -15,6 +15,6 @@ int print_sign(int n)
 		_c = '+';
 	if (n < 0)
 		_c = '-';
-	_putchar(_c)
+	_putchar(_c);
 	return ((n > 0) - (n < 0));
 }
