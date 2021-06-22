@@ -41,7 +41,7 @@ void print_to_98(int n)
 		putnum(i);
 		_putchar(',');
 		_putchar(' ');
-		if i > 98
+		if (i > 98)
 			i--;
 		else
 			i++;
