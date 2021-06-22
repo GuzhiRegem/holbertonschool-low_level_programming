@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- *jack_bauer - print a message with printf
+ *times_table - print a message with printf
  *
  *Return: end program
  */
-void jack_bauer(void)
+void times_table(void)
 {
 	int i, _i, r;
 
