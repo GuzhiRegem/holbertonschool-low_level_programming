@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *main - print a message with printf
+ *print_alphabet - print a message with printf
  *
  *Return: end program
  */
