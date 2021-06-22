@@ -44,7 +44,7 @@ void print_to_98(int n)
 	int i;
 
 	i = n + 0;
-        while (i != 98)
+	while (i != 98)
 	{
 		putnum(i);
 		_putchar(',');
