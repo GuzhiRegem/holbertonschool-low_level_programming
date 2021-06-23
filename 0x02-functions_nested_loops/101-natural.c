@@ -2,7 +2,8 @@
 
 int main(void)
 {
-	int i , n;
+	int i, n;
+
 	n = 0;
 	for (i = 0; i <= 1024; i++)
 	{
@@ -16,5 +17,5 @@ int main(void)
 	_putchar(((n / 10) % 10) + '0');
 	_putchar(((n / 1) % 10) + '0');
 	_putchar('\n');
-	return(0);
+	return (0);
 }
