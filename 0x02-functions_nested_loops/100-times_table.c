@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ *print_times_table - print a message with printf
+ *@n : si
+ *
+ *Return: end program
+ */
 void print_times_table(int n)
 {
 	int a, b, c;
