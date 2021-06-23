@@ -1,5 +1,10 @@
 #include "holberton.h"
 
+/**
+ *main - print a message with printf
+ *
+ *Return: end program
+ */
 int main(void)
 {
 	int i, n;
