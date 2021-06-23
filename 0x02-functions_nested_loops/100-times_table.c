@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 void rint_times_table(int n)
 {
 	int a, b, c;
