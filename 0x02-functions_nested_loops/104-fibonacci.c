@@ -10,11 +10,10 @@ int main(void)
 	long double a, b, c;
 	int i;
 
-	a = 1;
-	b = 2;
+	a = 0;
+	b = 1;
 	c = 0;
-	printf("1, 2, ");
-	for (i = 0; i < 90; i++)
+	for (i = 0; i < 98; i++)
 	{
 		c = a + b;
 		printf("%.0Lf, ", c);
