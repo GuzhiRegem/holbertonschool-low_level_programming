@@ -23,8 +23,8 @@ int main(void)
 		b = c;
 	}
 	c = a + b;
-       	if ((c % 2) == 0)
-	       	d += c;
+	if ((c % 2) == 0)
+		d += c;
 	printf("%ld\n", d);
 	return (0);
 }
