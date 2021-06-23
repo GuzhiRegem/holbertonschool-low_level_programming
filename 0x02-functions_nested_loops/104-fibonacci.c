@@ -13,7 +13,7 @@ int main(void)
 	a = 0;
 	b = 1;
 	c = 0;
-	for (i = 0; i < 96; i++)
+	for (i = 0; i < 100; i++)
 	{
 		c = a + b;
 		printf("%.0Lf, ", c);
