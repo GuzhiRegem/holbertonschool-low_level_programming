@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-void printnum(int n);
 int main(void)
 {
 	int i , n;
@@ -10,6 +9,5 @@ int main(void)
 		if (((i % 5) == 0) || ((i % 3) == 0))
 			n += i;
 	}
-	printnum(n);
 	return(0);
 }
