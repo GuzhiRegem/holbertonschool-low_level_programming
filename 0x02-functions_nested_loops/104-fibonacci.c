@@ -14,7 +14,7 @@ int main(void)
 	b = 2;
 	c = 0;
 	printf("1, 2, ");
-	for (i = 0; i < 95; i++)
+	for (i = 0; i < 94; i++)
 	{
 		c = a + b;
 		printf("%.0Lf, ", c);
