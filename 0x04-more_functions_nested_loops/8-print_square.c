@@ -2,7 +2,7 @@
 
 /**
  *print_square - print a message with printf
- *@size - number
+ *@size : number
  *
  *Return: end program
  */
@@ -12,12 +12,13 @@ void print_square(int size)
 
 	if (size > 0)
 	{
-		for (i = 0; i <= size; i++)
+		for (i = 0; i < size; i++)
 		{
 			for (m = 0; m < size; m++)
 				_putchar('#');
 			_putchar('\n');
 		}
 	}
-	_putchar('\n');
+	else
+		_putchar('\n');
 }
