@@ -9,12 +9,33 @@ void print_number(int n)
 {
 	int a, b;
 
-	a = 7;
-	while (a--)
+        if (n < 0)
 	{
-		b = ((n / (10 ** (a+1))) % 10);
-		if (b != 0)
-			_putchar(b + '0');
+		a = n * -1;
+		_putchar('-');
 	}
-	_putchar((n % 10) + '0');
+	else
+		a = n;
+	b = ((a / 10000000) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 1000000) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 100000) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 10000) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 1000) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 100) % 10);
+	if (b)
+		_putchar(b + '0');
+	b = ((a / 10) % 10);
+	if (b)
+		_putchar(b + '0');
+	_putchar((a % 10) + '0');
 }
