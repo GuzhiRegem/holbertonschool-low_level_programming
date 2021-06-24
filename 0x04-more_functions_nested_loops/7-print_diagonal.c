@@ -2,7 +2,7 @@
 
 /**
  *print_diagonal - print a message with printf
- *@n - number
+ *@n : number
  *
  *Return: end program
  */
