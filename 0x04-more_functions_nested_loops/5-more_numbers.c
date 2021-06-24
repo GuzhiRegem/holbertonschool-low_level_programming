@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- *print_numbers - print a message with printf
+ *more_numbers - print a message with printf
  *
  *Return: end program
  */
-void print_numbers(void)
+void more_numbers(void)
 {
 	int i, c;
 
