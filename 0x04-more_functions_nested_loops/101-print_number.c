@@ -1,5 +1,6 @@
 #include "holberton.h"
-/*
+
+/**
  *print_number - coso
  *@n : num
  *
@@ -9,7 +10,7 @@ void print_number(int n)
 {
 	int a, b;
 
-        if (n < 0)
+	if (n < 0)
 	{
 		a = n * -1;
 		_putchar('-');
