@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <math.h>
-
 /*
  *print_number - coso
  *@n : num
@@ -9,10 +7,14 @@
  */
 void print_number(int n)
 {
-	int i;
+	int a, b;
 
-	i = log10(n);
-	for (int a = i; a > 0; a--)
-		_putchar( (n / (10 ** i) ) % 10 );
-	_putchar('\n');
+	a = 7;
+	while (a--)
+	{
+		b = ((n / (10 ** (a+1))) % 10);
+		if (b != 0)
+			_putchar(b + '0');
+	}
+	_putchar((n % 10) + '0');
 }
