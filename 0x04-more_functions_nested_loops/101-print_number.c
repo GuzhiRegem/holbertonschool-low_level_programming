@@ -17,6 +17,9 @@ void print_number(int n)
 	}
 	else
 		a = n;
+	b = a / 10000000000;
+	if (b)
+		_putchar(b + '0');
 	b = ((a / 1000000000) % 10);
 	if (b)
 		_putchar(b + '0');
