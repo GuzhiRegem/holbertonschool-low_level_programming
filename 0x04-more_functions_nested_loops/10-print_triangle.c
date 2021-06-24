@@ -2,7 +2,7 @@
 
 /**
  *print_triangle - print a message with printf
- *@size - number
+ *@size : number
  *
  *Return: end program
  */
