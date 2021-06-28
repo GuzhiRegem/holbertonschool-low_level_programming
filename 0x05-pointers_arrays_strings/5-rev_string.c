@@ -18,7 +18,7 @@ void rev_string(char *s)
 	while (i)
 	{
 		i--;
-		out[i] = *(s + i);
+		out[leng - i] = *(s + i);
 	}
 	while (i < leng)
 	{
