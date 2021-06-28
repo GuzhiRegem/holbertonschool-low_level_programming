@@ -15,12 +15,14 @@ void rev_string(char *s)
 	while (*(s + i) != 0)
 		i++;
 	leng = i;
-	while (i)
+	i = 0;
+	while (*(s + i) != 0)
 	{
-		i--;
 		out[leng - i] = *(s + i);
+		i++;
 	}
-	while (i < leng)
+	i = 0;
+	while (*(s + i) != 0)
 	{
 		*(s + i) = out[i];
 		i++;
