@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- *_puts2 - print a message with printf
+ *puts2 - print a message with printf
  *@str : number
  *
  *Return: end program
  */
-void _puts2(char *str)
+void puts2(char *str)
 {
 	int i;
 
