@@ -6,7 +6,7 @@
  */
 int _atoi(char *s)
 {
-	long int number
+	long int number;
 		int sign, c, after, _after;
 
 	sign = 1;
