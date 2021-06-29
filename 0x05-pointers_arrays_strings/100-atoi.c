@@ -30,7 +30,7 @@ int _atoi(char *s)
 		     ((s[c] >= 'a') && (s[c] <= 'z'))) && (after == 0))
        			_after = 0;
 	}
-	number *= sign
+	number *= sign;
 	out = number;
 	return out
 }
