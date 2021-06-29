@@ -25,8 +25,8 @@ int _atoi(char *s)
 		}
 		if (after && (s[c] == '-'))
 			sign *= -1;
-		if ((((s[c] >= 'a') && (s[c] <= 'z'))
-		    || ((s[c] >= 'A') && (s[c] <= 'Z'))) && (after == 0)))
+		if ((((s[c] >= 'A') && (s[c] <= 'Z')) ||
+		     ((s[c] >= 'a') && (s[c] <= 'z'))) && (after == 0))
        			_after = 0;
 	}
 	return (sign * number);
