@@ -32,5 +32,5 @@ int _atoi(char *s)
 	}
 	number *= sign;
 	out = number;
-	return out
+	return (out);
 }
