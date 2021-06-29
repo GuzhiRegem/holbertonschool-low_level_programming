@@ -22,12 +22,12 @@ int _atoi(char *s)
 				number *= 10;
 				number += (s[c] - '0');
 			}
-			else if (after && (s[c] == '-'))
-				sign *= -1;
-			else if (((s[c] >= 'a') && (s[c] <= 'z'))
-				 || ((s[c] >= 'A') && (s[c] <= 'Z')))
-				_after = 0;
 		}
+		if (after && (s[c] == '-'))
+			sign *= -1;
+		if (((s[c] >= 'a') && (s[c] <= 'z'))
+			 || ((s[c] >= 'A') && (s[c] <= 'Z')))
+       			_after = 0;
 	}
 	return (sign * number);
 }
