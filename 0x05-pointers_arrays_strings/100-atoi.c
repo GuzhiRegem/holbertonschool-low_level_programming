@@ -24,7 +24,7 @@ int _atoi(char *s)
 			}
 			else if (after && (s[c] == '-'))
 				sign *= -1;
-			else if (s[c] != ' ')
+			else if ((s[c] != ' ') || (s[c] != '+'))
 				_after = 0;
 		}
 	}
