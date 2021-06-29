@@ -2,7 +2,7 @@
  *_atoi - coso
  *@s : a
  *
- *Return : int
+ *Return: int
  */
 int _atoi(char *s)
 {
@@ -28,7 +28,7 @@ int _atoi(char *s)
 			sign *= -1;
 		if ((((s[c] >= 'A') && (s[c] <= 'Z')) ||
 		     ((s[c] >= 'a') && (s[c] <= 'z'))) && (after == 0))
-       			_after = 0;
+			_after = 0;
 	}
 	number *= sign;
 	out = number;
