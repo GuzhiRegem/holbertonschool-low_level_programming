@@ -17,13 +17,13 @@ void print_number(int n)
 	while (d)
 	{
 		i++;
-		a *= 10;
+		a = a * 10;
 		d /= 10;
 	}
 	_n = n;
 	if (n < 0)
 	{
-		_n *= -1;
+		_n = _n * -1;
 		_putchar('-');
 	}
 	while (i)
@@ -37,6 +37,6 @@ void print_number(int n)
 	c = _n;
 	b = c % 10;
 	if (b < 0)
-		b *= -1;
-       	_putchar(b + '0');
+		b = b * -1;
+	_putchar(b + '0');
 }
