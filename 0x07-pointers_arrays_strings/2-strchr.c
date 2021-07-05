@@ -14,6 +14,7 @@ char *_strchr(char *s, char c)
 	int i, find;
 
 	find = 0;
+	p = s;
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] == c)
