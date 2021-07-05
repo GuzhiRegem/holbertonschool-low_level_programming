@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stddef.h>
-#include <stdio.h>
 
 /**
  *_strstr - print a message with printf
@@ -17,7 +16,6 @@ char *_strstr(char *haystack, char *needle)
 	checking = 0;
 	found = 0;
 	final = NULL;
-	printf("nul\n");
 	if (haystack != NULL)
 	{
 		for (a = 0; haystack[a]; a++)

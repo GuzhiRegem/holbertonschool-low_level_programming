@@ -9,7 +9,7 @@
 int main(void)
 {
 	char *s = "hello wo";
-	char *f = NULL;
+	char *f = "ll";
 	char *t;
 
 	printf("s\n");
