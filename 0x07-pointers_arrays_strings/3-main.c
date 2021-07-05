@@ -8,8 +8,8 @@
  */
 int main(void)
 {
-	char *s = NULL;
-	char *f = "oleh";
+	char *s = "hello";
+	char *f = 0;
 	unsigned int n;
 
 	printf("a\n");
