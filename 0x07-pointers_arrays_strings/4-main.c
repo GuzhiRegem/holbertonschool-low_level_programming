@@ -9,10 +9,12 @@
 int main(void)
 {
 	char *s = "hello, world";
-	char *f = "world";
+	char *f = "2";
 	char *t;
 
 	t = _strpbrk(s, f);
-	printf("%s\n", t);
+	if (t != NULL)
+		printf("%s\n", t);
+	else printf("s");
 	return (0);
 }

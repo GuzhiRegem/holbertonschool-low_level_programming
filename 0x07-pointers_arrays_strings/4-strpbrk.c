@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 
 /**
  *_strpbrk - print a message with printf
@@ -13,6 +14,7 @@ char *_strpbrk(char *s, char *accept)
 	char *p;
 
 	out = 1;
+	p = NULL;
 	for (a = 0; ((s[a] != 0) && (out)); a++)
 	{
 	        for (b = 0; accept[b] != 0; b++)
