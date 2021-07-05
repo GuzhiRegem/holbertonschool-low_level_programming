@@ -10,7 +10,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-        int posn = 0;
+	int posn = 0;
 	int poshs = 0;
 	char *p = NULL;
 
@@ -18,14 +18,14 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (poshs = 0; haystack[poshs] != '\0'; poshs++)
 		{
-			if(haystack[poshs] == needle[posn])
+			if (haystack[poshs] == needle[posn])
 			{
 				if (posn == 0)
 				{
 					p = haystack + poshs;
 				}
 				posn++;
-				if(needle[posn] == '\0')
+				if (needle[posn] == '\0')
 					break;
 			}
 			else
