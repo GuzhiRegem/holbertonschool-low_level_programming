@@ -14,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	int poshs = 0;
 	char *p = NULL;
 
-	if (haystack && needle && (needle[0] != 0))
+	if (haystack && needle)
 	{
 		for (poshs = 0; haystack[poshs] != '\0'; poshs++)
 		{
@@ -35,5 +35,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
+	if ((p == NULL) && (needle[0] == '\0'))
+		p = haystack + poshs;
 	return (p);
 }
