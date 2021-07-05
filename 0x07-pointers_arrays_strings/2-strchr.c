@@ -27,6 +27,8 @@ char *_strchr(char *s, char c)
 		}
 		if (find)
 			p = s + i;
+		else
+			p = NULL;
 	}
 	return (p);
 }

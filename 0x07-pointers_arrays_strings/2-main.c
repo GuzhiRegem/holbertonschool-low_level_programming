@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	char *s = "eeeeese";
+	char *s = "hola";
 	char *f;
 
 	f = _strchr(s, 'e');
@@ -17,5 +17,7 @@ int main(void)
 	{
 		printf("%s\n", f);
 	}
+	else
+		printf("si\n");
 	return (0);
 }
