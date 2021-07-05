@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  *_strchr - print a message with printf
@@ -14,15 +15,17 @@ char *_strchr(char *s, char c)
 	int i, find;
 
 	find = 0;
-	for (i = 0; (*(s + i) == 0) && (!find); i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (*(s + i) == c)
+		if (s[i] == c)
 		{
-			p = (s + i);
 			find = 1;
+			break;
 		}
 	}
 	if (find)
+		p = s + i;
+	else
 		p = NULL;
 	return (p);
 }
