@@ -41,10 +41,7 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 		}
-	}
-	if (found)
-		final = haystack + c;
-	else if (needle == NULL)
 		final = haystack + a;
+	}
 	return (final);
 }
