@@ -15,12 +15,15 @@ char *_strchr(char *s, char c)
 
 	find = 0;
 	p = s;
-	for (i = 0; ((s[i]) && (!find)); i++)
+	if (s != NULL)
 	{
-		if (s[i] == c)
+		for (i = 0; ((s[i]) && (!find)); i++)
 		{
-			find = 1;
-			break;
+			if (s[i] == c)
+			{
+				find = 1;
+				break;
+			}
 		}
 	}
 	if (find)
