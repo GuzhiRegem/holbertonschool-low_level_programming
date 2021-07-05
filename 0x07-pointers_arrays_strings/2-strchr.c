@@ -25,10 +25,8 @@ char *_strchr(char *s, char c)
 				break;
 			}
 		}
+		if (find)
+			p = s + i;
 	}
-	if (find)
-		p = s + i;
-	else
-		p = NULL;
 	return (p);
 }
