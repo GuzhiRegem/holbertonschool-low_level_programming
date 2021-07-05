@@ -25,7 +25,7 @@ char *_strchr(char *s, char c)
 				break;
 			}
 		}
-		if (find)
+		if (find || c == 0)
 			p = s + i;
 		else
 			p = NULL;
