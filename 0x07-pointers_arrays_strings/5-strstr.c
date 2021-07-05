@@ -10,41 +10,30 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int a, b, c, checking, found = 0;
-	char *final;
+        int posn = 0;
+	int poshs = 0;
+	char *p = NULL;
 
-	checking = 0;
-	found = 0;
-	final = NULL;
-	if (haystack != NULL)
+	if (haystack && needle && (needle[0] != 0))
 	{
-		for (a = 0; haystack[a]; a++)
+		for (poshs = 0; haystack[poshs] != '\0'; poshs++)
 		{
-			if (needle != NULL)
+			if(haystack[poshs] == needle[posn])
 			{
-				if (checking == 0)
+				if (posn == 0)
 				{
-					if (haystack[a] == *(needle))
-						checking = 1;
-					c = a;
+					p = haystack + poshs;
 				}
-				else
-				{
-					b = a - c;
-					if (needle[b] != haystack[a])
-						checking = 0;
-					else if (needle[b + 1] == 0)
-					{
-						found = 1;
-						break;
-					}
-				}
+				posn++;
+				if(needle[posn] == '\0')
+					break;
+			}
+			else
+			{
+				posn = 0;
+				p = NULL;
 			}
 		}
 	}
-	if (found)
-		final = haystack + c;
-	else if (needle == NULL)
-		final = haystack + a;
-	return (final);
+	return (p);
 }
