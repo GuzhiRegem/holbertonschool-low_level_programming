@@ -14,6 +14,7 @@ char *_strstr(char *haystack, char *needle)
 
 	checking = 0;
 	found = 0;
+	final = NULL;
 	for (a = 0; haystack[a]; a++)
 	{
 	        if (checking == 0)
