@@ -7,13 +7,13 @@
  *
  *Return: end program
  */
-int comp (int n, int y)
+int comp(int n, int y)
 {
 	if (y * y == n)
-		return(y);
+		return (y);
 	else if (y * y > n)
-		return(-1);
-	return (comp (n, y + 1));
+		return (-1);
+	return (comp(n, y + 1));
 }
 /**
  *_sqrt_recursion - print a message with printf
