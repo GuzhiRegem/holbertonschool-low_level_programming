@@ -6,9 +6,11 @@
  *
  *Return: end program
  */
-int _sqrt_recursion(int n);
+int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return ()
+	if (n == 1)
+		return (1);
+	return (n / (n / _sqrt_recursion(n - 1)));
 }
