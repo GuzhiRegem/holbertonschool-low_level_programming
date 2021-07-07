@@ -23,5 +23,5 @@ int comp(int n, int y)
  */
 int _sqrt_recursion(int n)
 {
-	return (comp(n, 1))
+	return (comp(n, 1));
 }
