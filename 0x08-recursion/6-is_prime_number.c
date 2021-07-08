@@ -9,14 +9,14 @@
  */
 int func(int n, int i)
 {
-        if (i == 1)
+	if (i == 1)
 	{
 		return (1);
 	}
-	else if((n % i) == 0)
-		return(0);
+	else if ((n % i) == 0)
+		return (0);
 	else
-		return(func(n, i - 1));
+		return (func(n, i - 1));
 }
 /**
  *is_prime_number - print a message with printf
@@ -31,5 +31,5 @@ int is_prime_number(int n)
 	else if (n < 0)
 		return (0);
 	else
-		return(1);
+		return (1);
 }
