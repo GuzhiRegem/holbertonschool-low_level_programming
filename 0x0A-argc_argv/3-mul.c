@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 		num1 = strtol(argv[1], &end, 10);
 		num2 = strtol(argv[2], &end, 10);
 		printf("%ld\n", num1 * num2);
+		return (0);
 	}
 	else
 	{

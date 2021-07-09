@@ -10,12 +10,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2 = 0;
+	int num1, num2, i, c = 0;
 
-	for (int i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
 		num1 = 0;
-		for (int c = 0; argv[i][c]; c++)
+		for (c = 0; argv[i][c]; c++)
 		{
 			if ((argv[i][c] <= '9') && (argv[i][c] >= '0'))
 				num1 = (num1 * 10) + (argv[i][c] - '0');
