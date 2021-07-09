@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 			cents = cents % coins[i];
 		}
 		amount += cents / coins[i];
+		if ((atoi(argv[1])) < 0)
+			amount = 0;
 		printf("%d\n", amount);
 		return (0);
 	}
