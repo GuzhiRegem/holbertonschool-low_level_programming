@@ -28,5 +28,5 @@ int main(int argc, char *argv[])
 		num2 += num1;
 	}
 	printf("%d\n", num2);
-        return (0);
+	return (0);
 }
