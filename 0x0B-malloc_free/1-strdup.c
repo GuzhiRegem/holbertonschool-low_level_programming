@@ -7,7 +7,7 @@
  *
  *Return: la
  */
-char *_strdup(char *str);
+char *_strdup(char *str)
 {
 	char *p = NULL;
 	unsigned int i, a;
