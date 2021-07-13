@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *p = NULL;
-	int i, a, total_count, tot = 0;
+	int i, a, totalcount, tot = 0;
 
 	for (i = 0; i < ac; i++)
 	{
