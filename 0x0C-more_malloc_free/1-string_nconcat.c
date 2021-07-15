@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  *string_nconcat - a
@@ -26,7 +27,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (n < len2)
 		len2 = n;
-	p = malloc(len1 + len2);
+	p = malloc(len1 + len2 + 1);
 	if (p)
 	{
 		for (i1 = 0; (i1 < len1) && s1; i1++)
