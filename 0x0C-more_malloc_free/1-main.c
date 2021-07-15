@@ -11,7 +11,7 @@ int main(void)
 {
 	char *concat;
 
-	concat = string_nconcat("", "5678", 2);
+	concat = string_nconcat(NULL, "5678", 2);
 	printf("%s\n", concat);
 	free(concat);
 	return (0);
