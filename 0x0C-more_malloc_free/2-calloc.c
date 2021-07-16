@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  *_calloc - a
@@ -10,7 +11,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *p;
+	char *p = NULL;
 	void *final;
 
 	if (nmemb && size)
