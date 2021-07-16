@@ -38,5 +38,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			p[i1 + i2] = s2[i2];
 		p[i1 + i2] = 0;
 	}
+	else
+	{
+		free(p);
+		p = NULL;
+	}
 	return (p);
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 /**
  * simple_print_buffer - prints buffer in hexa
@@ -39,8 +40,19 @@ void simple_print_buffer(char *buffer, unsigned int size)
 int main(void)
 {
 	char *a;
+	unsigned int num1, num2;
 
-	a = _calloc(98, sizeof(char));
+	num1 = 10;
+	num2 = 0;
+	a = calloc(num1, num2);
+	strcpy(a, "Holberton");
+	strcpy(a + 9, " School! :)\n");
+	a[97] = '!';
+	simple_print_buffer(a, 98);
+	free(a);
+	num1 = 98;
+	num2 = sizeof(char);
+	a = _calloc(num1, num2);
 	strcpy(a, "Holberton");
 	strcpy(a + 9, " School! :)\n");
 	a[97] = '!';
