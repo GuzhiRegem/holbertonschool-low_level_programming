@@ -1,0 +1,50 @@
+#include <stdlib.h>
+#include <stddef.h>
+
+/**
+ *_calloc - a
+ *@nmemb : aa
+ *@size : aa
+ *
+ *Return: none
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+        unsigned int i;
+        char *p = NULL;
+        void *final;
+
+        if (nmemb && size)
+                p = malloc(nmemb * size);
+        if (p)
+        {
+                for (i = 0; i < (nmemb * size); i++)
+                        *(p + i) = 0;
+        }
+        final = p;
+        return (final);
+}
+
+
+/**
+ *array_range - a
+ *@min : aa
+ *@max : aa
+ *
+ *Return: none
+ */
+int *array_range(int min, int max)
+{
+        int size;
+	int *p = NULL;
+
+	size = 20;
+	printf("%d\n",size);
+	if (min <= max)
+		p = malloc(size + 1);
+	if (p)
+	{
+		p[0] = 6;
+	}
+	return (p);
+}
