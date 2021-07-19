@@ -18,7 +18,26 @@ int str_len(char *str)
 		return (str_len(str + 1) + 1);
 	}
 	else
-		return(0);
+		return (0);
+}
+/**
+ *str_cpy - a
+ *@str: a
+ *
+ *Return: a
+ */
+char *str_cpy(char *str)
+{
+	char *p = NULL;
+	int i;
+
+	p = malloc(str_len(str));
+	if (p && str)
+	{
+		for (i = 0; str[i]; i++)
+			p[i] = str[i];
+	}
+	return (p);
 }
 /**
  *new_dog - a
@@ -30,58 +49,28 @@ int str_len(char *str)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-        dog_t *p = NULL;
+	dog_t *p = NULL;
 	char *cp_name;
 	char *cp_owner;
-	int i;
 
-	cp_name = malloc(str_len(name));
-	cp_owner = malloc(str_len(owner));
-	if (cp_name)
-	{
-		if (name)
-		{
-			for (i = 0; name[i]; i++)
-				cp_name[i] = name[i];
-		}
-		else
-		{
-			free(cp_name);
-			return (p);
-		}
-	}
-	else
+	cp_name = str_cpy(name);
+	if (!cp_name)
 		return (p);
-	if (cp_owner)
-	{
-		if (owner)
-		{
-			for (i = 0; owner[i]; i++)
-				cp_owner[i] = owner[i];
-		}
-		else
-		{
-			free(cp_name);
-			free(cp_owner);
-			return (p);
-		}
-	}
-	else
+	cp_owner = str_cpy(owner);
+	if (!cp_owner)
 	{
 		free(cp_name);
 		return (p);
 	}
 	p = malloc(sizeof(dog_t));
-	if (p)
-	{
-		p->name = cp_name;
-		p->age = age;
-		p->owner = cp_owner;
-	}
-	else
+	if (!p)
 	{
 		free(cp_name);
 		free(cp_owner);
+		return (p);
 	}
+	p->name = cp_name;
+	p->age = age;
+	p->owner = owner;
 	return (p);
 }
