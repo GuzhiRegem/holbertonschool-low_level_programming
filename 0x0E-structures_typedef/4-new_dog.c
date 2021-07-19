@@ -11,9 +11,14 @@
  */
 int str_len(char *str)
 {
-	if (str[0] == 0)
-		return (1);
-	return (str_len(str + 1) + 1);
+	if (str)
+	{
+		if (str[0] == 0)
+			return (1);
+		return (str_len(str + 1) + 1);
+	}
+	else
+		return(0);
 }
 /**
  *new_dog - a
