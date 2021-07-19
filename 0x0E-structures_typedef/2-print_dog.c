@@ -2,11 +2,8 @@
 #include <stdio.h>
 
 /**
- *init_dog - a
+ *print_dog - a
  *@d: a
- *@name: a
- *@age: a
- *@owner: a
  *
  *Return: a
  */
