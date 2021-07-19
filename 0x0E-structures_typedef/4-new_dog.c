@@ -34,15 +34,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	cp_owner = malloc(str_len(owner));
 	if (cp_name)
 	{
-		for (i = 0; name[i]; i++)
-			cp_name[i] = name[i];
+		if (name)
+		{
+			for (i = 0; name[i]; i++)
+				cp_name[i] = name[i];
+		}
 	}
 	else
 		return (p);
 	if (cp_owner)
 	{
+		if (owner)
+		{
 		for (i = 0; owner[i]; i++)
 			cp_owner[i] = owner[i];
+		}
 	}
 	else
 		return (p);
