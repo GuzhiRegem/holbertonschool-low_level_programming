@@ -45,7 +45,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 				cp_name[i] = name[i];
 		}
 		else
+		{
+			free(cp_name);
 			return (p);
+		}
 	}
 	else
 		return (p);
@@ -57,7 +60,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 				cp_owner[i] = owner[i];
 		}
 		else
+		{
+			free(cp_name);
+			free(cp_owner);
 			return (p);
+		}
 	}
 	else
 	{
