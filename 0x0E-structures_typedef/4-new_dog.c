@@ -26,24 +26,32 @@ int str_len(char *str)
 dog_t *new_dog(char *name, float age, char *owner)
 {
         dog_t *p = NULL;
-	dog_t doggo;
 	char *cp_name;
 	char *cp_owner;
 	int i;
 
-	if ((!owner) || (!name))
-		return (p);
 	cp_name = malloc(str_len(name));
-       	cp_owner = malloc(str_len(owner));
-	if ((!cp_owner) || (!cp_name))
+	cp_owner = malloc(str_len(owner));
+	if (cp_name)
+	{
+		for (i = 0; name[i]; i++)
+			cp_name[i] = name[i];
+	}
+	else
 		return (p);
-	for (i = 0; name[i]; i++)
-		cp_name[i] = name[i];
-	for (i = 0; owner[i]; i++)
-		cp_owner[i] = owner[i];
-	doggo.name = name;
-	doggo.age = age;
-	doggo.owner = owner;
-	p = &doggo;
+	if (cp_owner)
+	{
+		for (i = 0; owner[i]; i++)
+			cp_owner[i] = owner[i];
+	}
+	else
+		return (p);
+	p = malloc(sizeof(dog_t));
+	if (p)
+	{
+		p->name = cp_name;
+		p->age = age;
+		p->owner = cp_owner;
+	}
 	return (p);
 }
