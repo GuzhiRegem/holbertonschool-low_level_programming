@@ -31,6 +31,7 @@ char *str_cpy(char *str)
 	char *p = NULL;
 	int i;
 
+	p = malloc(str_len(str));
 	if (p && str)
 	{
 		for (i = 0; str[i]; i++)
@@ -53,21 +54,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *cp_name;
 	char *cp_owner;
 
+	p = malloc(sizeof(struct dog));
+	if (!p)
+		return (NULL);
 	cp_name = str_cpy(name);
-	if (cp_name == NULL)
-		return (p);
-	cp_owner = str_cpy(owner);
-	if (cp_owner == NULL)
+	if (!cp_name)
 	{
-		free(cp_name);
-		return (p);
+		free(p);
+		return (NULL);
 	}
-	p = malloc(sizeof(dog_t));
-	if (p == NULL)
+	cp_owner = str_cpy(owner);
+	if (!cp_owner)
 	{
+		free(p);
 		free(cp_name);
-		free(cp_owner);
-		return (p);
+		return (NULL);
 	}
 	p->name = cp_name;
 	p->age = age;
