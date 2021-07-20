@@ -53,7 +53,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *cp_name;
 	char *cp_owner;
 
-	printf("%d\n",str_len("arro"));
 	cp_name = str_cpy(name);
 	if (cp_name == NULL)
 		return (p);
