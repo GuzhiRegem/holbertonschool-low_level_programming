@@ -1,5 +1,5 @@
 /**
- *array_iterator - a
+ *int_index - a
  *@array: a
  *@size: a
  *@cmp: a
@@ -10,11 +10,14 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, num;
 
-	for (i = 0; i < size; i++)
+	if (array && cmp)
 	{
-		num = cmp(array[i]);
-		if (num)
-			return(i);
+		for (i = 0; i < size; i++)
+		{
+			num = cmp(array[i]);
+			if (num)
+				return (i);
+		}
 	}
 	return (-1);
 }
