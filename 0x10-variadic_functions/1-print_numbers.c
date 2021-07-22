@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- *sum_them_all - a
+ *print_numbers - a
  *@separator: a
  *@n: a
  *
