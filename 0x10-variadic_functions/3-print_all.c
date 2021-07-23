@@ -22,18 +22,18 @@ void print_all(const char * const format, ...)
 	{
 		if (n  == (i - 1))
 		{
-			separator = "";
+			sep = "";
 		}
 		switch (format[n])
 		{
 		case 'c':
-			printf("%c%s", va_arg(vl, int), separator);
+			printf("%c%s", va_arg(vl, int), sep);
 			break;
 		case 'i':
-			printf("%d%s", va_arg(vl, int), separator);
+			printf("%d%s", va_arg(vl, int), sep);
 			break;
 		case 'f':
-			printf("%f%s", va_arg(vl, double), separator);
+			printf("%f%s", va_arg(vl, double), sep);
 			break;
 		case 's':
 			c = va_arg(vl, char *);
