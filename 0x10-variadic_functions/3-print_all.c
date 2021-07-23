@@ -1,45 +1,49 @@
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "variadic_functions.h"
 /**
- *print_all - a
- *@format: a
- *
- *Return: int
+ * print_all - blabla
+ * @format: blabla
+ * Return: blabla
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int i;
+	va_list vl;
+	int n = 0, i = 0;
+	char *sep = ", ";
 	char *c;
 
-	va_start(args, format);
-	i = 0;
-	while (format[i])
+	va_start(vl, format);
+
+	while (format && format[i])
+		i++;
+
+	while (format && format[n])
 	{
-		switch (format[i])
+		if (n  == (i - 1))
 		{
-		case ('c'):
-			printf("%c", va_arg(args, int));
+			separator = "";
+		}
+		switch (format[n])
+		{
+		case 'c':
+			printf("%c%s", va_arg(vl, int), separator);
 			break;
-		case ('i'):
-			printf("%d", va_arg(args, int));
+		case 'i':
+			printf("%d%s", va_arg(vl, int), separator);
 			break;
-		case ('f'):
-			printf("%f", va_arg(args, double));
+		case 'f':
+			printf("%f%s", va_arg(vl, double), separator);
 			break;
-		case ('s'):
-			c = va_arg(args, char *);
-			if (!c)
-				printf("(nil)");
-			else
-				printf("%s", c);
+		case 's':
+			c = va_arg(vl, char *);
+			if (c == NULL)
+				c = "(nil)";
+			printf("%s%s", c, sep);
 			break;
 		}
-		if (format[i+ 1])
-			printf(", ");
-		i++;
+		n++;
 	}
-	va_end(args);
 	printf("\n");
+	va_end(vl);
 }
