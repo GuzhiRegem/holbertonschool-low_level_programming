@@ -22,18 +22,27 @@ unsigned int _str_len(char *str)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *ptr = NULL;
+	list_t *end;
 	char *cpy = NULL;
 
 	if (str)
 		cpy = strdup(str);
 	ptr = malloc(sizeof(list_t));
-	if (ptr && head)
+	if (ptr)
 	{
 		ptr->str = cpy;
 		if (cpy)
 			ptr->len = _str_len(cpy);
 		ptr->next = NULL;
-		(**head).next = ptr;
+		if (*head)
+		{
+			end = *head;
+			while (end->next)
+				end = end->next;
+			end->next = ptr;
+		}
+		else
+			*head = ptr;
 	}
 	return (ptr);
 }
