@@ -14,12 +14,12 @@ unsigned int _str_len(char *str)
 	return (_str_len(str + 1) + 1);
 }
 /**
- *add_node - a
+ *add_node_end - a
  *@head: j
  *@str: a
  *Return: a
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *ptr = NULL;
 	char *cpy = NULL;
