@@ -12,7 +12,7 @@ size_t list_len(const list_t *h)
 
 	if (h)
 	{
-		return (print_list(h->next) + 1);
+		return (list_len(h->next) + 1);
 	}
 	else
 		return (out);
