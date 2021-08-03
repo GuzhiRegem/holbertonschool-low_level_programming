@@ -1,5 +1,5 @@
 #include "lists.h"
-11;rgb:3030/0a0a/2424#include <stdlib.h>
+#include <stdlib.h>
 /**
  *free_listint - a
  *@head: a
