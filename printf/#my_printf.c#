@@ -1,0 +1,28 @@
+void print_string(char *str)
+{
+	int i;
+
+	if (str)
+	{
+		for (i = 0; str[i]; i++)
+			putchar(str[i]);
+	}
+}
+void print_int(int num)
+{
+	int max = sizeof(int) * 8;
+	int write = 0;
+
+	while (max > 0)
+		putchar()
+		max--;
+}
+/**
+ *my_printf - printf function
+ *@formatted: text to print
+ *
+ *Return: nothing
+ */
+void my_printf(char *formatted, ...)
+{
+}
