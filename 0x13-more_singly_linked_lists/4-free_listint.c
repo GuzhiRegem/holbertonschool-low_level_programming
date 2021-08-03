@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
+11;rgb:3030/0a0a/2424#include <stdlib.h>
 /**
  *free_listint - a
  *@head: a
@@ -12,7 +12,7 @@ void free_listint(listint_t *head)
 	if (head)
 	{
 		ptr = head->next;
-        	free(head);
+		free(head);
 		if (ptr)
 			free_listint(ptr);
 	}
