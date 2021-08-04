@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 /**
  *cmpr - a
  *@head: a
@@ -37,7 +38,8 @@ size_t print_l(const listint_t *h, const listint_t *head)
 		return (out);
 	if (cmpr(head, h->next, h))
 	{
-		return (out);
+		printf("-> [%p] %d\n", (void *)h->next, h->next->n);
+		exit(98);
 	}
 	return (out + print_l(h->next, head));
 }
