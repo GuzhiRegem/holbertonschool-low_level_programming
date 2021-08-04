@@ -9,10 +9,12 @@
  */
 int cmpr(const listint_t *head, const listint_t *ptr, const listint_t *limit)
 {
-	if (!head || (head == limit))
+	if (!head)
 		return (0);
 	if (head == ptr)
 		return (1);
+	if (head == limit)
+		return (0);
 	return (cmpr(head->next, ptr, limit));
 }
 /**
