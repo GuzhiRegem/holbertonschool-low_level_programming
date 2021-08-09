@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 /**
  *read_textfile - a
@@ -13,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 	ssize_t out;
 	char *buf;
-	int printed;
+	size_t printed;
 
 	fd = open(filename, O_RDONLY | O_CREAT);
 	if (!filename)
@@ -26,8 +27,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	out = read(fd, buf, letters);
 	close(fd);
 	printed = write(1, buf, out);
-	if (printed != letters | out != letters)
-		return (0);
+	if (printed != letters)
 	free(buf);
 	return (out);
 }
