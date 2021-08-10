@@ -6,7 +6,7 @@
 #include "main.h"
 
 void _close(int file);
-void file_to_str(int from, char **buffer, int size);
+void file_to_str(int from, int to, char **files);
 /**
  *main- cp command
  *@argc: argument count
@@ -15,8 +15,7 @@ void file_to_str(int from, char **buffer, int size);
  */
 int main(int argc, char **argv)
 {
-	int from, to, from_size;
-	char *buffer;
+	int from, to;
 
 	if (argc != 3)
 	{
@@ -30,25 +29,14 @@ int main(int argc, char **argv)
 			argv[1]);
 		exit(98);
 	}
-	from_size = lseek(from, 0, SEEK_END);
-	buffer = malloc(from_size + 1);
-	if (!buffer)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-			argv[1]);
-		exit(98);
-	}
 	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (to == -1)
 	{
-		free(buffer);
 		_close(from);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	file_to_str(from, &buffer, from_size);
-	write(to, buffer, from_size);
-	free(buffer);
+	file_to_str(from, to, argv);
 	_close(from);
 	_close(to);
 	return (0);
@@ -72,21 +60,34 @@ void _close(int file)
 /**
  *file_to_str - save file content in a string
  *@from: file to copy
- *@buffer: pointer to buffer
- *@size: size of file
+ *@to: pointer to buffer
+ *@files: size of file
  *Return: nothing
  */
-void file_to_str(int from, char **buffer, int size)
+void file_to_str(int from, int to, char **files)
 {
-	int repeat, i, len;
-	char buf[1025];
+	int len = 1024, _len;
+	char buf[1024];
 
-	repeat = size / 1024;
-	for (i = 0; i <= repeat; i++)
+	while (len == 1024)
 	{
-		lseek(from, 1024 * i, SEEK_SET);
 		len = read(from, buf, 1024);
-		buf[len] = 0;
-		strncpy((*buffer) + (i * 1024), buf, len + 1);
+		if (len == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", files[1]);
+			_close(from);
+			_close(to);
+			exit(98);
+		}
+		_len = write(to, buf, len);
+		if (_len == -1)
+		{
+			_close(from);
+			_close(to);
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", files[2]);
+			exit(99);
+		}
 	}
 }
