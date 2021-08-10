@@ -29,7 +29,9 @@ int main(int argc, char **argv)
 			argv[1]);
 		exit(98);
 	}
-	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	to = open(argv[2], O_CREAT | O_EXCL | O_WRONLY, 0664);
+	if (to < 0)
+		to = open(argv[2], O_TRUNC | O_WRONLY);
 	if (to == -1)
 	{
 		_close(from);
