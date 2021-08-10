@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 			argv[1]);
 		exit(98);
 	}
-	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC | O_EXCL, 0664);
+	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (to == -1)
 	{
 		free(buffer);
