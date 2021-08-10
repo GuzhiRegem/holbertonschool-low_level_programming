@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	}
 	from_size = lseek(from, 0, SEEK_END);
 	buffer = malloc(from_size);
-	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (!buffer | (to == -1))
 	{
 		if (buffer)
