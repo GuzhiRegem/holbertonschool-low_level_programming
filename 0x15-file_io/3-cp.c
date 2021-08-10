@@ -5,6 +5,7 @@
 #include <string.h>
 #include "main.h"
 
+void _close(int file);
 void file_to_str(int from, char **buffer, int size);
 /**
  *main- cp command
@@ -19,42 +20,69 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			argv[1]);
 		exit(98);
 	}
 	from_size = lseek(from, 0, SEEK_END);
-	buffer = malloc(from_size);
-	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	if (!buffer | (to == -1))
+	buffer = malloc(from_size + 1);
+	if (!buffer)
 	{
-		if (buffer)
-			free(buffer);
-		if (to != -1)
-			close(to);
-		close(from);
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
-		exit (99);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			argv[1]);
+		exit(98);
+	}
+	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	if (to == -1)
+	{
+		free(buffer);
+		_close(from);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
 	file_to_str(from, &buffer, from_size);
 	write(to, buffer, from_size);
 	free(buffer);
-	close(from);
-	close(to);
+	_close(from);
+	_close(to);
 	return (0);
 }
+/**
+ *_close - close with err
+ *@file: file to close
+ *Return: nothing
+ */
+void _close(int file)
+{
+	int n;
+
+	n = close(file);
+	if (n == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
+		exit(100);
+	}
+}
+/**
+ *file_to_str - save file content in a string
+ *@from: file to copy
+ *@buffer: pointer to buffer
+ *@size: size of file
+ *Return: nothing
+ */
 void file_to_str(int from, char **buffer, int size)
 {
 	int repeat, i, len;
 	char buf[1025];
 
 	repeat = size / 1024;
-        for (i = 0; i <= repeat; i++)
+	for (i = 0; i <= repeat; i++)
 	{
 		lseek(from, 1024 * i, SEEK_SET);
 		len = read(from, buf, 1024);
