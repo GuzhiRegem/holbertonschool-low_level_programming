@@ -9,5 +9,5 @@ size_t dlistint_len(const dlistint_t *h)
 {
 	if (!h)
 		return (0);
-	return (1 + print_dlistint(h->next));
+	return (1 + dlistint_len(h->next));
 }
