@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
-  * insert_dnodeint_at_index - a
-  * @h: a
-  * @idx: a
-  * @n: a
+  * delete_dnodeint_at_index - a
+  * @head: a
+  * @index: a
   * Return: a
   */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
