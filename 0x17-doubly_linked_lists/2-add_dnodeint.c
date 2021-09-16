@@ -26,4 +26,13 @@ dlistint_t *create_node(int n)
   */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
+	dlistint_t *new;
+
+	new = create_node(n);
+	if (!new)
+		return (NULL);
+	*head->prev = new;
+	new->next = *head;
+	*head = new;
+	return (new);
 }
