@@ -1,5 +1,7 @@
 #include "lists.h"
 
+#ifndef CREAT
+#define CREAT
 /**
   * create_node - a
   * @n: a
@@ -17,6 +19,7 @@ dlistint_t *create_node(int n)
 	out->prev = NULL;
 	return (out);
 }
+#endif
 
 /**
   * add_dnodeint - a
