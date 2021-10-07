@@ -56,15 +56,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(key, ptr->key) == 0)
 			exist = 1;
-		while (ptr->next)
-		{
+		for (; ptr->next; ptr = ptr->next)
 			if (strcmp(key, ptr->key) == 0)
 			{
 				exist = 1;
 				break;
 			}
-			ptr = ptr->next;
-		}
 	}
 	if (exist)
 	{
