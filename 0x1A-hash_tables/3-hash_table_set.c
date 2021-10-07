@@ -14,13 +14,13 @@ hash_node_t *new_node(const char *value, const char *key)
 	out = malloc(sizeof(hash_node_t));
 	if (!out)
 		return (out);
-	n_key = malloc(strlen(key));
+	n_key = malloc(strlen(key) + 1);
 	if (!n_key)
 	{
 		free(out);
 		return (NULL);
 	}
-	n_value = malloc(strlen(value));
+	n_value = malloc(strlen(value) + 1);
 	if (!n_value)
 	{
 		free(out);
@@ -68,7 +68,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	if (exist)
 	{
-		val_cpy = malloc(strlen(value));
+		val_cpy = malloc(strlen(value) + 1);
 		if (!val_cpy)
 			return (0);
 		strcpy(val_cpy, value);
