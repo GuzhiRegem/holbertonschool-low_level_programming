@@ -20,6 +20,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		printf("no existe ptr\n");
 		return (NULL);
 	}
+	if (strcmp(key, ptr->key) == 0)
+		exist = 1;
 	while (ptr->next)
 	{
 		if (strcmp(key, ptr->key) == 0)
@@ -30,6 +32,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		ptr = ptr->next;
 	}
 	if (!exist)
+	{
 		return (NULL);
+	}
 	return (ptr->value);
 }

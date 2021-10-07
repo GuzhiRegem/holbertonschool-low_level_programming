@@ -53,6 +53,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ind = key_index((const unsigned char *)key, ht->size);
 	ptr = ht->array[ind];
 	if (ptr)
+	{
+		if (strcmp(key, ptr->key) == 0)
+			exist = 1;
 		while (ptr->next)
 		{
 			if (strcmp(key, ptr->key) == 0)
@@ -62,6 +65,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			ptr = ptr->next;
 		}
+	}
 	if (exist)
 	{
 		val_cpy = malloc(strlen(value));
