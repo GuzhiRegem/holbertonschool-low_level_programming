@@ -48,7 +48,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *val_cpy = NULL;
 	unsigned long int ind;
 
-	if (!ht || !key)
+	if (!ht || !key || !value)
+		return (0);
+	if (strlen(key) == 0)
 		return (0);
 	ind = key_index((const unsigned char *)key, ht->size);
 	ptr = ht->array[ind];
