@@ -54,14 +54,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ptr = ht->array[ind];
 	if (ptr)
 	{
-		if (strcmp(key, ptr->key) == 0)
-			exist = 1;
-		for (; ptr->next; ptr = ptr->next)
+		for (; ptr; ptr = ptr->next)
 			if (strcmp(key, ptr->key) == 0)
 			{
 				exist = 1;
 				break;
 			}
+			if (!ptr->next)
+				break;
 	}
 	if (exist)
 	{
