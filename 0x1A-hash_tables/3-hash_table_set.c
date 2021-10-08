@@ -45,7 +45,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int exist = 0;
 	hash_node_t *ptr, *new;
-	char *val_cpy;
+	char *val_cpy = NULL;
 	unsigned long int ind;
 
 	if (!ht || !key)
@@ -65,10 +65,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	if (exist)
 	{
-		val_cpy = malloc(strlen(value) + 1);
-		if (!val_cpy)
-			return (0);
-		strcpy(val_cpy, value);
+		if (value)
+		{
+			val_cpy = malloc(strlen(value) + 1);
+			if (!val_cpy)
+				return (0);
+			strcpy(val_cpy, value);
+		}
 		if (ptr->value)
 			free(ptr->value);
 		ptr->value = val_cpy;
