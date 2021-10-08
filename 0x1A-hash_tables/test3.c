@@ -9,6 +9,10 @@ int main(void)
 	ht = hash_table_create(1024);
 	printf("created ht at: %p with size: %lu\n",(void *)ht,ht->size);
 	hash_table_set(ht, "c", "fun");
+	hash_table_set(ht, NULL, "jaja");
+	hash_table_set(ht, "jaja", NULL);
+	hash_table_set(ht, "", "muajaja");
+	hash_table_set(ht, "vacio", "");
     hash_table_set(ht, "python", "awesome");
     hash_table_set(ht, "Bob", "and Kris love asm");
     hash_table_set(ht, "N", "queens");
@@ -26,6 +30,7 @@ int main(void)
 	hash_table_set(ht, "depravement", "Cool");
 	hash_table_set(ht, "serafins", "Battery Street");
 	hash_table_set(ht, "c", "isfun");
+	hash_table_set(ht, "", "");
 	for (i = 0; i < ht->size; i++)
 	{
 		ptr = ht->array[i];

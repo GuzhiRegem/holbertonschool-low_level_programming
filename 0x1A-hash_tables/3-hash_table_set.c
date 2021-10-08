@@ -48,14 +48,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *val_cpy = NULL;
 	unsigned long int ind;
 
-	if (!ht || !key || !value)
-		return (0);
-	if (strlen(key) == 0)
+	if (!ht || !key || !value || strlen(key) == 0)
 		return (0);
 	ind = key_index((const unsigned char *)key, ht->size);
-	ptr = ht->array[ind];
-	if (ptr)
-		for (; ptr; ptr = ptr->next)
+	if (ht->array[ind])
+		for (ptr = ht->array[ind]; ptr; ptr = ptr->next)
 		{
 			if (strcmp(key, ptr->key) == 0)
 			{
@@ -67,24 +64,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	if (exist)
 	{
-		if (value)
-		{
-			val_cpy = malloc(strlen(value) + 1);
-			if (!val_cpy)
-				return (0);
-			strcpy(val_cpy, value);
-		}
-		if (ptr->value)
-			free(ptr->value);
+		val_cpy = malloc(strlen(value) + 1);
+		if (!val_cpy)
+			return (0);
+		strcpy(val_cpy, value);
+		free(ptr->value);
 		ptr->value = val_cpy;
 		return (1);
 	}
 	new = new_node(value, key);
 	if (!new)
 		return (0);
-	if (ptr)
-		ptr->next = new;
-	else
-		ht->array[ind] = new;
+	new->next = ht->array[ind];
+	ht->array[ind] = new;
 	return (1);
 }
