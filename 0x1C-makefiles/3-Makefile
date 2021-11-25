@@ -5,12 +5,13 @@ NAME=school
 RM=rm
 
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
 clean:
-	$(RM) -f *~ $(NAME)
+	$(RM) -f $(wildcard *~) $(NAME)
 oclean:
-	echo hola
+	$(RM) -f $(OBJ)
 fclean: 
-	echo hola
+	$(RM) -f $(NAME) $(wildcard *~) $(OBJ)
 re:
-	echo hola
+	$(RM) -f $(OBJ)
+	all
