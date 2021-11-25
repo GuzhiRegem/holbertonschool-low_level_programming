@@ -1,2 +1,4 @@
 CC=gcc
-SRC=
+SRC = main.c school.c
+OBJ=$(SRC:.c=.o)
+NAME=
