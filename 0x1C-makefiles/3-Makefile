@@ -14,4 +14,4 @@ fclean:
 	$(RM) -f $(NAME) $(wildcard *~) $(OBJ)
 re:
 	$(RM) -f $(OBJ)
-	all
+	$(CC) $(SRC) -o $(NAME)
