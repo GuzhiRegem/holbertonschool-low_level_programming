@@ -9,7 +9,7 @@ all: $(OBJ)
 clean:
 	$(RM) -f *~ $(NAME)
 oclean:
-	$(RM) -f $(OBJ)
+	echo hola
 fclean: 
 	echo hola
 re:
