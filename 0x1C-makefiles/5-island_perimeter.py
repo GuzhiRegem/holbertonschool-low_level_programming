@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-	5-island_perimeter.py    
+    5-island_perimeter.py
     module
     return: nothing
 """
 
+
 def island_perimeter(grid):
-	""" island perimeter """
+    """ island perimeter """
     if grid is None or type(grid) is not list or type(grid[0]) is not list:
         return 0
     perimeter = 0
@@ -20,4 +21,3 @@ def island_perimeter(grid):
                 perimeter += int(grid[y][x + 1])
                 perimeter += int(grid[y][x - 1])
     return (perimeter)
-
