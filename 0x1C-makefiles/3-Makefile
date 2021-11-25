@@ -13,4 +13,4 @@ oclean:
 fclean: 
 	echo hola
 re:
-	all
+	echo hola
