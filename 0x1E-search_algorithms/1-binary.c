@@ -2,7 +2,7 @@
 
 /**
  * print_arr - prints an array
- * @array: array 
+ * @array: array
  * @size: size
  */
 void print_arr(int *array, size_t size)
@@ -25,7 +25,7 @@ void print_arr(int *array, size_t size)
  * @array: array
  * @size: size
  * @value: value
- * Return: int 
+ * Return: int
  */
 int binary_search(int *array, size_t size, int value)
 {
@@ -43,22 +43,22 @@ int binary_search(int *array, size_t size, int value)
 			return (value);
 		return (-1);
 	}
-	mid_ind = (size/2) - (1 - (size % 2));
+	mid_ind = (size / 2) - (1 - (size % 2));
 	middle = array[mid_ind];
 	if (value == middle)
 		return (mid_ind);
 	if (value < middle)
 	{
-		offst = - mid_ind - (2 - (size % 2));
+		offst = -mid_ind - (2 - (size % 2));
 		ind = binary_search(array + arr_offst, size + offst, value);
-		return (ind >= 0 ? ind + arr_offst: -1);
+		return (ind >= 0 ? ind + arr_offst : -1);
 	}
 	if (value > middle)
 	{
-		offst = - mid_ind - 1;
+		offst = -mid_ind - 1;
 		arr_offst = mid_ind + 1;
 		ind = binary_search(array + arr_offst, size + offst, value);
-		return (ind >= 0 ? ind + arr_offst: -1);
+		return (ind >= 0 ? ind + arr_offst : -1);
 	}
 	return (0);
 }
