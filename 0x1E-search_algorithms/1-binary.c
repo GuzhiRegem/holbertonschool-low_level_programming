@@ -47,10 +47,7 @@ int binary_search(int *array, size_t size, int value)
 		return (mid_ind);
 	offst = -(size - mid_ind);
 	if (value > middle)
-	{
-		offst = -mid_ind - 1;
-		arr_offst = mid_ind + 1;
-	}
+		offst = -mid_ind - 1, arr_offst = mid_ind + 1;
 	ind = binary_search(array + arr_offst, size + offst, value);
 	return (ind >= 0 ? ind + arr_offst : -1);
 	return (0);
