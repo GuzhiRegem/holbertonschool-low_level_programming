@@ -11,7 +11,7 @@ int jump_search(int *array, size_t size, int value)
 {
 	int a = 0, jump = sqrt(size), b = 0;
 
-	if (!array)
+	if (!array || array[0] > value)
 		return (-1);
 	while (b <= (int)size)
 	{
